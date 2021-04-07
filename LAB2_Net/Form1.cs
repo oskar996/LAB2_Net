@@ -17,31 +17,15 @@ namespace LAB2_Net
     public partial class Form1 : Form
     {
         DateTime aktualna;
-        Kantor Baza;
         public Form1()
         {
             InitializeComponent();
             aktualna = dateTimePicker2.Value.Date;
-            Baza = new Kantor();
-            Kurs nowy = new Kurs(); nowy.Data = aktualna; nowy.PLN = 3; nowy.CHF = 1; nowy.VES = 1; nowy.GBP = 1;
-            Baza.Piniondze.Add(nowy);
-            Baza.SaveChanges();
-
         }
 
         private async void button1_ClickAsync(object sender, EventArgs e)
         {
             string call;
-
-            var Czy = Baza.Piniondze.Any(s => s.Data == dateTimePicker2.Value.Date);
-            if (!Czy)
-            {
-                listBox1.Items.Add("cos");
-            }
-            else
-            {
-                listBox1.Items.Add("cos2");
-            }
 
             if (aktualna == dateTimePicker2.Value.Date)
             {
